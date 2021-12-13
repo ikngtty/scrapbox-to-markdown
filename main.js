@@ -43,7 +43,8 @@
   const newDoc = window.open(
     '', // url
   ).document;
-  newDoc.title = 'conversion result';
+  // newDoc.title = 'conversion result'; // failed
+  setTimeout(() => newDoc.title = 'conversion result', 0);
   const textNode = newDoc.createTextNode(mdDoc.toString());
   newDoc.body.appendChild(textNode);
 })();
